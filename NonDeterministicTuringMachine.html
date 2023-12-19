@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Turing Machine Simulator</title>
+    <link rel="stylesheet" href="lib/styleNDTM.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+
+
+<div class="title">
+    <h1>Non Deterministic Turing Machine Simulator</h1>
+</div>
+<br>
+<button onclick="window.location.href = 'index.html';" style="height:30px;">Single Tape Turing Machine</button>
+<button onclick="window.location.href = 'MultitapeTuringMachine.html';" style="height:30px;">Multi Tape Turing Machine</button>
+
+<br><br>
+
+
+<form>
+
+    <label for="startingTape">Starting Tape<br>
+        <input type="text" id="startingTape" name="startingTape"></label><br><br><br>
+
+
+
+    <div class="eight">
+        <h1>Computation Tree</h1>
+    </div>
+
+
+    <div id="main-container">
+
+
+        <div style="float:left">
+            <div class="dati">Dati:
+
+                <p>Set of states:</p>
+                <p id="stateSet"></p>
+
+                <p>Turing Machine Alphabet Σ: </p>
+                <p id="mdtAlphabet"></p>
+
+                <p>Tape Alphabet Γ: </p>
+                <p id="tapeAlphabet"></p>
+
+                <p>Starting State:</p>
+                <p id="startingState">q0</p>
+
+                <p>Accept State:</p>
+                <p id="acceptState">qAccept</p>
+
+                <p>Reject State:</p>
+                <p id="rejectState">qReject</p>
+
+            </div>
+
+            <!-- Aggiorna la larghezza e l'altezza del tuo SVG-->
+            <svg width="800" height="600" ></svg>
+
+            <br><br><br><br>
+
+            <div class="loadComputation">
+
+                <!-- Pulsanti per caricare computazioni predefinite -->
+                <button type="button" onclick="loadComputation('1')" style="margin: 5px">Test</button>
+
+            </div>
+
+            <p>Current State:</p>
+            <p id="currentState">q0</p>
+
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div style="height:150px">
+            <label for="transitionsInput"> Confirm Input Computation </label>
+            <q>
+                Configuration input type: (q0,1,0,R,q1)
+            </q>
+            <br>
+            <textarea id="transitionsInput" rows="4" cols="50"></textarea><br>
+
+            <button type="button" id="runComputationButton">Run Computation</button>
+        </div>
+
+
+    </div>
+
+</form>
+
+<script src="lib/NonDeterministicTuringMachine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="lib/NonDeterministicGraph.js"></script>
+
+</body>
+</html>

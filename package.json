@@ -1,0 +1,8 @@
+{
+  "name": "TuringMachineSimulator",
+  "version": "1.0.0",
+  "dependencies": {
+    "d3": "^7.8.5",
+    "treejs": "^0.6.2"
+  }
+}

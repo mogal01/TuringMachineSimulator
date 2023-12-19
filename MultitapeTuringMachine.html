@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Turing Machine Simulator</title>
+    <link rel="stylesheet" href="lib/styleMTMTM.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+
+
+<div class="title">
+    <h1>Multi Tape Turing Machine Simulator</h1>
+</div>
+<br>
+<button onclick="window.location.href = 'index.html';" style="height:30px;">Single Tape Turing Machine</button>
+<button onclick="window.location.href = 'NonDeterministicTuringMachine.html';" style="height:30px;">Non Deterministic Turing Machine</button>
+
+<br><br>
+
+
+<form>
+    <div class="tapes-content">
+        <label for="startingTape">Starting First Tape<br>
+            <input type="text" id="startingTape" name="startingTape" ></label>
+        <label for="startingTape">Starting Second Tape<br>
+            <input type="text" id="startingTape-2" name="startingTape" ></label>
+        <label for="startingTape">Starting Third Tape<br>
+            <input type="text" id="startingTape-3" name="startingTape" ></label>
+    </div>
+
+    <br><br><br>
+
+    <div class="eight">
+        <h1>Tapes Content</h1>
+    </div>
+
+
+    <div id="main-container">
+
+
+        <div>
+            <div class="dati">Dati:
+
+                <p>Set of states:</p>
+                <p id="stateSet"></p>
+
+                <p>Turing Machine Alphabet Σ: </p>
+                <p id="mdtAlphabet"></p>
+
+                <p>Tape Alphabet Γ: </p>
+                <p id="tapeAlphabet"></p>
+
+                <p>Starting State:</p>
+                <p id="startingState">q0</p>
+
+                <p>Accept State:</p>
+                <p id="acceptState">qAccept</p>
+
+                <p>Reject State:</p>
+                <p id="rejectState">qReject</p>
+
+            </div>
+
+    <div class="multiTape-container">
+
+        <div id="tapeWrapper1" class="tapeWrapper">
+            <button type="button" id="moveLeft-1">Move Left</button>
+            <div class="tape-container" id="tape">
+
+                <div class="cell" id="cell-1"> </div>
+                <div class="cell" id="cell-2"> </div>
+                <div class="cell" id="cell-3"> </div>
+                <div class="cell" id="cell-4"> </div>
+                <div class="cell" id="cell-5"> </div>
+                <div class="cell" id="cell-6"> </div>
+                <div class="cell" id="cell-7"> </div>
+                <div class="cell" id="cell-8"> </div>
+                <div class="cell" id="cell-9"> </div>
+                <div class="cell" id="cell-10"> </div>
+                <div class="cell" id="cell-11"> </div>
+
+
+            </div>
+            <button type="button" id="moveRight-1">Move Right</button>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br>
+
+        <div id="tapeWrapper2" class="tapeWrapper">
+            <button type="button" id="moveLeft-2">Move Left</button>
+            <div class="tape-container" id="tape-2">
+
+                <div class="cell2" id="cell-12"> </div>
+                <div class="cell2" id="cell-13"> </div>
+                <div class="cell2" id="cell-14"> </div>
+                <div class="cell2" id="cell-15"> </div>
+                <div class="cell2" id="cell-16"> </div>
+                <div class="cell2" id="cell-17"> </div>
+                <div class="cell2" id="cell-18"> </div>
+                <div class="cell2" id="cell-19"> </div>
+                <div class="cell2" id="cell-20"> </div>
+                <div class="cell2" id="cell-21"> </div>
+                <div class="cell2" id="cell-22"> </div>
+
+
+            </div>
+            <button type="button" id="moveRight-2">Move Right</button>
+        </div>
+
+
+        <br><br><br><br><br><br><br><br><br>
+
+
+        <div id="tapeWrapper3" class="tapeWrapper">
+            <button type="button" id="moveLeft-3">Move Left</button>
+
+            <div class="tape-container" id="tape-3">
+
+                <div class="cell3" id="cell-23"> </div>
+                <div class="cell3" id="cell-24"> </div>
+                <div class="cell3" id="cell-25"> </div>
+                <div class="cell3" id="cell-26"> </div>
+                <div class="cell3" id="cell-27"> </div>
+                <div class="cell3" id="cell-28"> </div>
+                <div class="cell3" id="cell-29"> </div>
+                <div class="cell3" id="cell-30"> </div>
+                <div class="cell3" id="cell-31"> </div>
+                <div class="cell3" id="cell-32"> </div>
+                <div class="cell3" id="cell-33"> </div>
+
+
+            </div>
+            <button type="button" id="moveRight-3">Move Right</button>
+
+        </div>
+
+
+
+        <div class="loadComputation">
+
+            <!-- Pulsanti per caricare computazioni predefinite -->
+            <button type="button" onclick="loadComputation('1')" style="margin: 5px">a^n b^n</button>
+            <br><br>
+
+        </div>
+
+    </div>
+
+
+            <br><br><br><br>
+
+
+            <p>Current State:</p>
+            <p id="currentState">q0</p>
+
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <button type="button" value="nextStep" id="nextStep" disabled>Next Step</button>
+
+        <br>
+        <br>
+
+
+        <div style="height:150px">
+            <label for="transitionsInput"> Confirm Input Computation </label>
+            <q>
+                Configuration input type: (q0,a/_/b,_/b/_,R/L/S,q0)
+            </q>
+            <br>
+            <textarea id="transitionsInput" rows="4" cols="50"></textarea><br>
+
+            <button type="button" id="runComputationButton">Run Computation</button>
+            <button type="button" onclick="loadGraph()" id="loadGraphButton">Load Graph</button>
+        </div>
+
+        <!-- Aggiorna la larghezza e l'altezza del tuo SVG-->
+        <svg width="800" height="600" ></svg>
+
+    </div>
+
+</form>
+<div></div>
+
+<script src="lib/MultiTapeTuringMachine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="lib/graph.js"></script>
+
+</body>
+</html>

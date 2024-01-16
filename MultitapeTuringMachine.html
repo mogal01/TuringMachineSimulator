@@ -11,7 +11,10 @@
 
 
 <div class="title">
-    <h1>Multi Tape Turing Machine Simulator</h1>
+    <h1>Multi Tape Turing Machine Simulator
+        <img src="img/noun-turing-machine-63426.png" alt="turingMachine" class="image"></h1>
+
+    <a href="https://github.com/mogal01/TuringMachineSimulator"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="gitHubLink"  class="github" ></a>
 </div>
 <br>
 <button onclick="window.location.href = 'index.html';" style="height:30px;">Single Tape Turing Machine</button>
@@ -41,25 +44,29 @@
 
 
         <div>
-            <div class="dati">Dati:
+            <div class="dati">
 
-                <p>Set of states:</p>
-                <p id="stateSet"></p>
+                <ul class="paragraph-list">
 
-                <p>Turing Machine Alphabet Σ: </p>
-                <p id="mdtAlphabet"></p>
+                    <li><p>Set of states:</p><br>
+                        <p id="stateSet"></p></li>
 
-                <p>Tape Alphabet Γ: </p>
-                <p id="tapeAlphabet"></p>
+                    <li> <p>Turing Machine Alphabet Σ: </p>
+                        <p id="mdtAlphabet"></p></li>
 
-                <p>Starting State:</p>
-                <p id="startingState">q0</p>
+                    <li><p>Tape Alphabet Γ: </p>
+                        <p id="tapeAlphabet"></p></li>
 
-                <p>Accept State:</p>
-                <p id="acceptState">qAccept</p>
+                    <li><p>Starting State:</p>
+                        <p id="startingState">q0</p></li>
 
-                <p>Reject State:</p>
-                <p id="rejectState">qReject</p>
+                    <li><p>Accept State:</p>
+                        <p id="acceptState">qAccept</p></li>
+
+                    <li><p>Reject State:</p>
+                        <p id="rejectState">qReject</p></li>
+
+                </ul>
 
             </div>
 
@@ -140,9 +147,15 @@
 
         <div class="loadComputation">
 
-            <!-- Pulsanti per caricare computazioni predefinite -->
-            <button type="button" onclick="loadComputation('1')" style="margin: 5px">a^n b^n</button>
-            <br><br>
+            <label for="loadMenu">Load Computation</label>
+            <select id="loadMenu">
+
+                <option value="1" style="margin: 5px">a^n b^n</option>
+
+
+            </select>
+
+            <button type="button" onclick="loadComputation()" style="margin: 5px">Load Computation</button>
 
         </div>
 
@@ -153,14 +166,11 @@
 
 
             <p>Current State:</p>
-            <p id="currentState">q0</p>
+            <p id="currentState" class="current-state">q0</p>
 
         </div>
 
 
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>

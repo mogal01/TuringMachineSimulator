@@ -11,7 +11,9 @@
 
 
 <div class="title">
-    <h1>Non Deterministic Turing Machine Simulator</h1>
+    <h1>Non Deterministic Turing Machine Simulator
+        <img src="img/noun-turing-machine-63426.png" alt="turingMachine" class="image"></h1>
+    <a href="https://github.com/mogal01/TuringMachineSimulator"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="gitHubLink"  class="github" ></a>
 </div>
 <br>
 <button onclick="window.location.href = 'index.html';" style="height:30px;">Single Tape Turing Machine</button>
@@ -36,25 +38,29 @@
 
 
         <div style="float:left">
-            <div class="dati">Dati:
+            <div class="dati">
 
-                <p>Set of states:</p>
-                <p id="stateSet"></p>
+                <ul class="paragraph-list">
 
-                <p>Turing Machine Alphabet Σ: </p>
-                <p id="mdtAlphabet"></p>
+                    <li><p>Set of states:</p><br>
+                        <p id="stateSet"></p></li>
 
-                <p>Tape Alphabet Γ: </p>
-                <p id="tapeAlphabet"></p>
+                    <li> <p>Turing Machine Alphabet Σ: </p>
+                        <p id="mdtAlphabet"></p></li>
 
-                <p>Starting State:</p>
-                <p id="startingState">q0</p>
+                    <li><p>Tape Alphabet Γ: </p>
+                        <p id="tapeAlphabet"></p></li>
 
-                <p>Accept State:</p>
-                <p id="acceptState">qAccept</p>
+                    <li><p>Starting State:</p>
+                        <p id="startingState">q0</p></li>
 
-                <p>Reject State:</p>
-                <p id="rejectState">qReject</p>
+                    <li><p>Accept State:</p>
+                        <p id="acceptState">qAccept</p></li>
+
+                    <li><p>Reject State:</p>
+                        <p id="rejectState">qReject</p></li>
+
+                </ul>
 
             </div>
 
@@ -69,9 +75,6 @@
                 <button type="button" onclick="loadComputation('1')" style="margin: 5px">Test</button>
 
             </div>
-
-            <p>Current State:</p>
-            <p id="currentState">q0</p>
 
         </div>
 
@@ -93,6 +96,7 @@
             <textarea id="transitionsInput" rows="4" cols="50"></textarea><br>
 
             <button type="button" id="runComputationButton">Run Computation</button>
+
         </div>
 
 

@@ -6,12 +6,16 @@
     <title>Turing Machine Simulator</title>
     <link rel="stylesheet" href="lib/style.css">
     <link rel="shortcut icon" href="#">
+    <link rel="icon" href="img/noun-turing-machine-63426.png">
 </head>
 <body>
 
 
 <div class="title">
-    <h1>Turing Machine Simulator</h1>
+    <h1>Turing Machine Simulator
+        <img src="img/noun-turing-machine-63426.png" alt="turingMachine" class="image"></h1>
+
+    <a href="https://github.com/mogal01/TuringMachineSimulator"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="gitHubLink"  class="github" ></a>
 </div>
 
 <br>
@@ -24,10 +28,6 @@
 
 <form>
 
-    <label for="startingTape">Starting Tape<br>
-    <input type="text" id="startingTape" name="startingTape"></label><br><br><br>
-
-
 
 
     <div class="eight">
@@ -38,9 +38,9 @@
     <div id="main-container">
 
 
-        <div id="tapeWrapper">
-            <button type="button" id="moveLeft">Move Left</button>
-            <div class="tape-container" id="tape">
+        <div id="tapeWrapper" style="height:250px">
+            <button type="button" id="moveLeft" style="margin:5px">Move Left</button>
+            <div class="tape-container" id="tape" style="margin-top:40px">
 
                 <div class="cell" id="cell-1"> </div>
                 <div class="cell" id="cell-2"> </div>
@@ -56,62 +56,69 @@
 
 
             </div>
-            <button type="button" id="moveRight">Move Right</button>
+            <button type="button" id="moveRight"  style="margin:5px">Move Right</button>
         </div>
 
 
         <div>
-            <div class="dati">Dati:
+            <div class="dati">
 
-                <p>Set of states:</p>
-                <p id="stateSet"></p>
+                <ul class="paragraph-list">
 
-                <p>Turing Machine Alphabet Σ: </p>
-                <p id="mdtAlphabet"></p>
+                    <li><p>Set of states:</p><br>
+                    <p id="stateSet"></p></li>
 
-                <p>Tape Alphabet Γ: </p>
-                <p id="tapeAlphabet"></p>
+                    <li> <p>Turing Machine Alphabet Σ: </p>
+                    <p id="mdtAlphabet"></p></li>
 
-                <p>Starting State:</p>
-                <p id="startingState">q0</p>
+                    <li><p>Tape Alphabet Γ: </p>
+                     <p id="tapeAlphabet"></p></li>
 
-                <p>Accept State:</p>
-                <p id="acceptState">qAccept</p>
+                    <li><p>Starting State:</p>
+                    <p id="startingState">q0</p></li>
 
-                <p>Reject State:</p>
-                <p id="rejectState">qReject</p>
+                    <li><p>Accept State:</p>
+                     <p id="acceptState">qAccept</p></li>
+
+                    <li><p>Reject State:</p>
+                    <p id="rejectState">qReject</p></li>
+
+                </ul>
 
             </div>
 
-            <br><br><br><br>
+            <br><br><br><br><br><br><br>
 
             <div class="loadComputation">
 
-                <!-- Pulsanti per caricare computazioni predefinite -->
-                <button type="button" onclick="loadComputation('3')" style="margin: 5px">a^n b^n</button>
-                <br><br>
-                <button type="button" onclick="loadComputation('1')" style="margin: 5px">f(x,y)=x+y</button>
-                <br><br>
-                <button type="button" onclick="loadComputation('2')" style="margin: 5px">Test Computation</button>
-                <br><br>
+                <label for="startingTape">Starting Tape<br>
+                    <input type="text" id="startingTape" name="startingTape">
+                </label>
+
+                <br><br><br><br><br>
+                <label for="loadMenu">Load Computation</label>
+                    <select id="loadMenu">
+                        <option value="3" style="margin: 5px">a^n b^n</option>
+
+                        <option value="1" style="margin: 5px">f(x,y)=x+y</option>
+
+                        <option value="2" style="margin: 5px">Shift Input</option>
+
+                    </select>
+
+                <button type="button" onclick="loadComputation()" style="margin: 5px">Load Computation</button>
 
 
             </div>
 
-            <p>Current State:</p>
-            <p id="currentState">q0</p>
+            <br>
+            <p style="font-size: 20px">Current State:</p>
+            <p id="currentState" class="current-state">q0</p>
 
         </div>
 
 
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
 
         <button type="button" value="nextStep" id="nextStep" disabled>Next Step</button>
 
@@ -119,7 +126,7 @@
         <br>
 
 
-        <div style="height:150px">
+        <div style="height:250px">
             <label for="transitionsInput"> Confirm Input Computation </label>
             <q>
                 Configuration input type: (q0,1,0,R,q1)
@@ -131,7 +138,6 @@
             <button type="button" onclick="loadGraph()" id="loadGraphButton">Load Graph</button>
         </div>
 
-        <!-- Aggiorna la larghezza e l'altezza del tuo SVG-->
         <svg width="800" height="600" ></svg>
 
     </div>
@@ -141,7 +147,7 @@
 
 <script src="lib/TuringMachine.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3.v7.js"></script>
 <script src="lib/graph.js"></script>
 
 </body>

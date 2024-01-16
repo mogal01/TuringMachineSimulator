@@ -75,6 +75,7 @@ h1 {
     justify-content: center;
     margin-right: 5px;
 
+
 }
 
 .cell.active {
@@ -97,7 +98,7 @@ h1 {
     text-align:center;
     overflow: hidden;
     white-space: nowrap;
-    width: 800px; /* Larghezza del rettangolo centrale */
+    width: 850px; /* Larghezza del rettangolo centrale */
     height: 150px;
     position: absolute;
     left: 50%;
@@ -116,7 +117,6 @@ h1 {
 }
 
 button{
-
     align-items: center;
     background-color: #fff;
     border-radius: 12px;
@@ -145,15 +145,43 @@ button{
 }
 
 button:hover {
-        box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+        box-shadow: #000000 0 0 0 3px, transparent 0 0 0 0;
 }
 
 .loadComputation{
     position: absolute;
     right: 0;
     margin-right: 10px;
-    display: flex;
     flex-direction: column;
+    display: flex; /* Imposta il display su flessibile per allineare gli elementi in modo orizzontale */
+    gap: 10px; /* Aggiunge spazio tra gli elementi */
+    align-items: center; /* Allinea verticalmente gli elementi al centro */
+    background-color: #f0f0f0; /* Aggiunge un colore di sfondo */
+    padding: 10px; /* Aggiunge spaziatura interna al contenitore */
+    border: 1px solid #ccc; /* Aggiunge un bordo */
+    border-radius: 5px; /* Aggiunge un bordo arrotondato */
+}
+
+/* Stili per la select */
+.loadComputation select {
+    padding: 5px; /* Aggiunge spaziatura interna */
+    border: 1px solid #ccc; /* Aggiunge un bordo */
+    border-radius: 3px; /* Aggiunge un bordo arrotondato */
+}
+
+/* Stili per l'input */
+.loadComputation input[type="text"] {
+    padding: 5px; /* Aggiunge spaziatura interna */
+    border: 1px solid #ccc; /* Aggiunge un bordo */
+    border-radius: 3px; /* Aggiunge un bordo arrotondato */
+    flex-grow: 1; /* Fa espandere l'input per occupare tutto lo spazio disponibile */
+}
+
+/* Stili opzionali per evidenziare gli elementi quando sono in focus */
+.loadComputation select:focus,
+.loadComputation input[type="text"]:focus {
+    border-color: #f0f0f0; /* Cambia il colore del bordo in focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Aggiunge una leggera ombra quando è in focus */
 }
 
 .dati{
@@ -168,5 +196,133 @@ button:disabled {
     cursor: not-allowed;
     pointer-events: none;
 }
+
+/* Stilizzazione generale per l'input text */
+input {
+    width: 60%; /* Larghezza al 100% del contenitore padre */
+    padding: 10px; /* Spazio interno per il testo */
+    border: 1px solid #ccc; /* Bordo sottile con colore grigio chiaro */
+    border-radius: 4px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo */
+}
+
+/* Stilizzazione quando l'input è in stato "focus" (selezionato) */
+input:focus {
+    border-color: #f0f0f0; /* Cambia il colore del bordo quando in stato di focus */
+    outline: none; /* Rimuove la bordatura di default */
+    box-shadow: 0 0 5px #007bff; /* Aggiunge un'ombra sottile quando in stato di focus */
+}
+
+/* Stilizzazione quando l'input è in stato "hover" (il mouse ci passa sopra) */
+input:hover {
+    border-color: #66afe9; /* Cambia il colore del bordo quando in stato di hover */
+}
+
+/* Stili per ciascun paragrafo */
+.paragraph-list li {
+    margin-bottom: 20px; /* Aumenta lo spazio tra i paragrafi */
+    border: 2px solid #f0f0f0; /* Aggiungi un bordo più spesso e colorato */
+    padding: 15px; /* Aumenta la spaziatura interna ai paragrafi */
+    background-color: #f8f9fa; /* Cambia il colore di sfondo */
+    border-radius: 8px; /* Aggiungi bordi arrotondati */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aggiungi una leggera ombra */
+}
+
+/* Stili per il testo dei paragrafi */
+.paragraph-list p {
+    font-size: 20px; /* Aumenta la dimensione del carattere */
+    line-height: 1.4; /* Migliora la spaziatura delle righe */
+    margin: 0; /* Rimuovi il margine predefinito */
+}
+
+/* Stili quando si passa il mouse sopra il paragrafo */
+.paragraph-list li:hover {
+    background-color: #f0f0f0; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+/* Stile per la select */
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Stile per le opzioni della select */
+select option {
+    font-size: 14px;
+}
+
+/* Stili per la textarea */
+textarea {
+    width: 25%; /* Occupa l'intera larghezza del contenitore */
+    height: 50%;
+    padding: 10px; /* Aggiungi spaziatura interna */
+    border: 2px solid #f0f0f0; /* Aggiungi un bordo blu */
+    border-radius: 8px; /* Bordi arrotondati */
+    font-size: 16px; /* Dimensione del carattere */
+    line-height: 1.4; /* Spaziatura delle righe */
+    resize: vertical; /* Permetti il ridimensionamento verticale */
+}
+
+/* Stili quando la textarea ha il focus */
+textarea:focus {
+    border-color: #f0f0f0; /* Cambia il colore del bordo al focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Aggiungi una leggera ombra al focus */
+}
+
+/* Stili per il paragrafo dello stato attuale */
+.current-state {
+    font-size: 18px; /* Dimensione del carattere */
+    color: #333; /* Colore del testo */
+    padding: 5px 10px; /* Aggiungi spaziatura interna */
+    border: 1px solid #ccc; /* Bordo sottile grigio */
+    border-radius: 5px; /* Bordi arrotondati */
+    text-align: center; /* Allinea il testo al centro */
+    margin: 10px auto; /* Margine esterno */
+    max-width: 300px; /* Larghezza massima */
+}
+
+/* Stili per l'immagine */
+.image {
+    width: 100px; /* Larghezza desiderata per l'immagine */
+    height: auto; /* Altezza automatica per mantenere le proporzioni */
+    margin-left: 10px; /* Spazio a sinistra dell'immagine */
+    vertical-align: middle; /* Allinea verticalmente al testo */
+}
+
+.github{
+    width: 100px; /* Larghezza desiderata per l'immagine */
+    height: auto; /* Altezza automatica per mantenere le proporzioni */
+    position:absolute;
+    top: 0;
+    right: 0;
+
+}
+
+
+label {
+    font-family: 'Arial', sans-serif; /* Specifica un font desiderato (esempio: Arial) */
+    font-size: 20px; /* Imposta la dimensione del carattere desiderata (esempio: 16px) */
+}
+
+#startingTape{
+    width: 200px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: lightsteelblue; /* Colore di sfondo visibile */
+    border: 1px solid black; /* Bordo per evidenziare il tooltip */
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
 
 

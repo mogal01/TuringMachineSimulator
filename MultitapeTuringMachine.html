@@ -183,7 +183,7 @@
         <br>
 
 
-        <div style="height:150px">
+        <div style="height:600px">
             <label for="transitionsInput"> Confirm Input Computation </label>
             <q>
                 Configuration input type: (q0,a/_/b,_/b/_,R/L/S,q0)
@@ -191,17 +191,18 @@
             <br>
             <textarea id="transitionsInput" rows="4" cols="50"></textarea><br>
 
+            <div>
             <button type="button" id="runComputationButton">Run Computation</button>
             <button type="button" onclick="loadGraph()" id="loadGraphButton">Load Graph</button>
+            </div>
         </div>
 
         <!-- Aggiorna la larghezza e l'altezza del tuo SVG-->
-        <svg width="800" height="600" ></svg>
+        <svg width="800" height="800" ></svg>
 
     </div>
 
 </form>
-<div></div>
 
 <script src="lib/MultiTapeTuringMachine.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

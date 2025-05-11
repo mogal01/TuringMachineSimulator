@@ -4,6 +4,8 @@
 
 Questo repository contiene un **Simulatore di Macchina di Turing**, un'applicazione web sviluppata per il corso di Elementi della Teoria della Computazione, utilizzando JavaScript, HTML e CSS. Il simulatore modella la funzionalità di una Macchina di Turing standard, di una Macchina di Turing a 3 nastri e di una Macchina di Turing non deterministica.
 
+Disponibile al link: [https://github.com/mogal01/TuringMachineSimulator](https://mogal01.github.io/TuringMachineSimulator/)
+
 ## Caratteristiche
 
 - **Simulazione della Macchina di Turing**: Simula il funzionamento di una Macchina di Turing. Permette l'inserimento del contenuto iniziale del nastro e delle istruzioni per la Macchina di Turing.
